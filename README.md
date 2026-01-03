@@ -1,19 +1,19 @@
-I need to set up version control for my Unreal Engine project. Here are the details:
+# UE5 FPS Multiplayer Demo - Tencent Game Client Assignment
 
-1. **Project Path**: C:/Users/Asus/Documents/Unreal Projects/MyProject2
+**Repository**: https://github.com/YOUR_USERNAME/UE5-FPS-TencentGame-Demo
 
-2. **Git Configuration**:
-   - Use Git LFS for large Unreal files (.uasset, .umap, etc.)
-   - GitHub Repository: https://github.com/CHANSingYeungSunny/UE5-FPS-Multiplayer-Demo---Tencent-Game-Client-Assignment
-   - Target Branch: master
-   - Commit Author Info: 
-     - Name: CHANSingYeungSunny
-     - Email: minesunnya@gmail.com
+## 🎮 Gameplay
+Multiplayer game where players compete to kill AI enemies. First to reach **10 points** wins.
 
-3. **Tools**:
-   - [Optional] If using Diversion: Include Diversion CLI installation and setup steps
-   - [Optional] Any other specific tools or workflows
+## 🚀 How to Run
+1. Open `TencentGame.uproject` with UE5.x
+2. **Play Settings**: Number of Players = **2**, Net Mode = **Play as Listen Server**
+3. Test: Enemy AI, kill sync, score display, win condition
 
-4. **Verification**: After setup, confirm the commit author is correctly set and files are pushed to GitHub
+## 🛠️ Technical Implementation
+- **Enemy AI**: NavMeshBoundsVolume + AIController + Behavior Tree (Chase → Attack → Server Damage)
+- **Multiplayer Weapons**: Server_Fire RPC + Projectile LineTrace → Server ApplyDamage
+- **Score Sync**: PlayerState Replicated Score variable + GameMode OnEnemyKilled event
+- **Win Condition**: GameState Replicated MatchState + UMG Victory Screen
 
-Please provide clear confirmation steps and test commands after completion.
+[Demo Video Link]
