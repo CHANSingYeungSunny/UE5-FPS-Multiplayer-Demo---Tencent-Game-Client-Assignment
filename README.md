@@ -1,6 +1,6 @@
 # UE5 FPS Multiplayer Demo - 开局一课客户端大作业
 
-**Repository**: https://github.com/YOUR_USERNAME/UE5-FPS-TencentGame-Demo
+**Repository**: https://github.com/CHANSingYeungSunny/UE5-FPS-Multiplayer-Demo---Tencent-Game-Client-Assignment?tab=readme-ov-file
 
 ## 🌐 Language / 语言
 
