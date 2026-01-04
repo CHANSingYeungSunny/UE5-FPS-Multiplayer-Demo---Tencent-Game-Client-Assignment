@@ -444,7 +444,7 @@ README 应包含：
 ## Cover
 
 **Project Title**: FPS Demo Based on the UE5 First Person Template – Enemy AI and Multiplayer System  
-**Student Name**: Chen Shengyang  
+**Student Name**: Chan Sing Yeung, Sunny 
 **University**: City University of Hong Kong  
 **Submission Date**: January 2026  
 **GitHub Repository**: https://github.com/CHANSingYeungSunny/UE5-FPS-Multiplayer-Demo---Tencent-Game-Client-Assignment?tab=readme-ov-file#english-version-  
