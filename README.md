@@ -50,7 +50,8 @@ Blackboard（黑板）是 UE5 行为树中的关键状态容器，用于在服�
 2. TargetActor 的有无直接控制 BT 的分支选择（有目标→追击，无目标→巡逻），提高了响应速度  
 3. 在 UE5 编辑器中可通过 Behavior Tree/Blackboard 面板实时观察 Key 值变化，便于调试"目标是否正确写入"等问题  
 
-![Blackboard Design](./media/image1.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/d20197f1-f2dc-4d41-a049-6ba783409ef7" />
+
 
 ### 2.2 行为树设计
 
@@ -85,7 +86,8 @@ ROOT (Selector)
 2. MoveTo Task 的 AcceptanceRadius = 10.0（接近玩家后开始攻击的距离）  
 3. LocatePlayer Service Tick Interval = 0.5 秒  
 
-![Behavior Tree](./media/image2.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/45c62139-7db8-4c32-ab9c-a3e547a994bd" />
+
 
 ### 2.3 定位玩家服务（BTService_LocatePlayer）
 
@@ -112,7 +114,8 @@ ROOT (Selector)
 
 **优势**: Service 与 Task 解耦，使目标搜索与动作执行各自独立，易于调试和扩展。
 
-![Locate Player Service](./media/image3.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/fb81e827-1d57-4fe3-aa1b-539e37e7761e" />
+
 
 ### 2.4 漫游任务（BTTTask_Roam）
 
@@ -137,7 +140,8 @@ ROOT (Selector)
 2. 随机性增加玩家的不可预测性，提升游戏难度  
 3. 每次漫游完成后自动生成新目标，形成循环行为  
 
-![Roaming Task](./media/image4.png)
+<img width="905" height="536" alt="image" src="https://github.com/user-attachments/assets/cfae546e-389c-4541-97ec-d1df099012f6" />
+
 
 ### 2.5 攻击任务与接口（BTTTask_Attack + BPI_Enemy）
 
@@ -162,8 +166,9 @@ Function Attack(TargetActor: Actor) -> void
 2. 若加入新的敌人类型（例如射手、坦克），只要实现相同接口即可复用整套 BT  
 3. 便于单元测试：可单独测试 BT 的任务调度，而不依赖敌人实现  
 
-![Attack Task](./media/image5.png)
-![Attack Interface](./media/image6.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/2f4e0769-4493-4d52-9313-c34637840124" />
+<img width="905" height="533" alt="image" src="https://github.com/user-attachments/assets/bbc937cd-4a75-4a64-8e79-aa3033955c18" />
+
 
 ### 2.6 敌人攻击实现（BP_Enemy Attack）
 
@@ -197,8 +202,9 @@ Function Attack(TargetActor: Actor) -> void
 2. 可添加冷却时间（Cooldown），避免过于频繁施加伤害  
 3. 可在服务器端执行伤害逻辑并通过 RPC 同步到客户端 UI  
 
-![Enemy Attack Implementation](./media/image7.png)
-![Attack Logic](./media/image8.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/d5125c7c-81b2-4d22-a5b7-c1dee06177c0" />
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/4c2e843e-337d-442b-a178-3ce8b3b51d01" />
+
 
 ### 2.7 调试过程与问题定位
 
@@ -223,7 +229,7 @@ Function Attack(TargetActor: Actor) -> void
 - 在 BB_EnemyAI 中确认 TargetActor 是 Object 类型，Base Class 设为 Actor  
 - 保存并重新编译，后在 Behavior Tree 节点 Details 中即可下拉选择 TargetActor  
 
-![Debug Issue 1](./media/image9.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/3d711849-760f-49cb-9657-c7d129350402" />
 
 #### 问题 2：AnyDamage 事件不触发
 
@@ -256,7 +262,7 @@ Function Attack(TargetActor: Actor) -> void
 2. **Print String 节点**: 在关键路径插入输出，便于追踪数据流向  
 3. **Output Log**: 查看 UE5 编辑器的消息与日志，筛选关键词定位问题  
 
-![Debug Issue 2](./media/image10.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/98a1208a-692d-4095-82e0-a5ff41dd4d63" />
 
 ## 第三部分：未完成要求与后续计划
 
@@ -488,7 +494,7 @@ The `BB_EnemyAI` Blackboard in this project defines these keys:
 2. Whether `TargetActor` is set directly controls Behavior Tree branching (target → chase, no target → roam), improving responsiveness  
 3. UE5's Behavior Tree/Blackboard panels allow real-time inspection of key value changes, which helps debug issues like "is the target written correctly?"  
 
-![Blackboard Design](./media/image1.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/98b3cb2b-7690-412e-acef-f6380a951d45" />
 
 ### 2.2 Behavior Tree Design
 
@@ -523,7 +529,7 @@ ROOT (Selector)
 2. MoveTo task AcceptanceRadius = 10.0 (distance to start attacking)  
 3. LocatePlayer service tick interval = 0.5 seconds  
 
-![Behavior Tree](./media/image2.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/5e561a4f-d839-4a5d-a79f-e5582199cf4b" />
 
 ### 2.3 Player Locating Service (BTService_LocatePlayer)
 
@@ -550,7 +556,7 @@ ROOT (Selector)
 
 **Benefit**: Decoupling the Service from Tasks makes detection and actions independent, improving debugging and extensibility.
 
-![Locate Player Service](./media/image3.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/27ab78f6-441f-4d4a-9fd7-dc24d6b942a0" />
 
 ### 2.4 Roaming Task (BTTTask_Roam)
 
@@ -575,7 +581,7 @@ ROOT (Selector)
 2. Randomness increases unpredictability and difficulty  
 3. Creates a loop by generating a new point after each roam completes  
 
-![Roaming Task](./media/image4.png)
+<img width="905" height="536" alt="image" src="https://github.com/user-attachments/assets/d143680e-1c34-4ebc-a431-f6e5f007290c" />
 
 ### 2.5 Attack Task & Interface (BTTTask_Attack + BPI_Enemy)
 
@@ -600,8 +606,8 @@ Function Attack(TargetActor: Actor) -> void
 2. New enemy types (e.g., shooter, tank) can reuse the same BT by implementing the same interface  
 3. Easier unit testing: the BT scheduling can be tested independently of the enemy implementation  
 
-![Attack Task](./media/image5.png)
-![Attack Interface](./media/image6.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/8b1a689a-1a5a-44fa-ae04-6d7bf33e0683" />
+<img width="905" height="533" alt="image" src="https://github.com/user-attachments/assets/03eb91c2-6dba-42bf-a967-4176ce1de5ce" />
 
 ### 2.6 Enemy Attack Implementation (BP_Enemy Attack)
 
@@ -635,8 +641,8 @@ Function Attack(TargetActor: Actor) -> void
 2. Add cooldown to prevent overly frequent damage  
 3. Run damage on server and sync client UI via RPC  
 
-![Enemy Attack Implementation](./media/image7.png)
-![Attack Logic](./media/image8.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/9ce68061-e65e-4a52-8512-84501cc904a7" />
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/c0c53bb0-45be-4197-8783-425f5a57f9f7" />
 
 ### 2.7 Debugging & Issue Diagnosis
 
@@ -661,7 +667,7 @@ Two common issues were encountered during development and resolved using the fol
 - Confirm `TargetActor` is Object with Base Class Actor in `BB_EnemyAI`  
 - Save/recompile, then select `TargetActor` in the BT node Details  
 
-![Debug Issue 1](./media/image9.png)
+<img width="905" height="535" alt="image" src="https://github.com/user-attachments/assets/4a464c77-9733-46b9-9dea-a02342898bd6" />
 
 #### Issue 2: AnyDamage event does not fire
 
@@ -694,7 +700,7 @@ Two common issues were encountered during development and resolved using the fol
 2. **Print String** nodes for tracing data flow  
 3. **Output Log** for editor messages and filtering keywords  
 
-![Debug Issue 2](./media/image10.png)
+<img width="905" height="534" alt="image" src="https://github.com/user-attachments/assets/1b1a1cd5-61f3-490b-8cce-a091e38bac9b" />
 
 ## Part 3: Remaining Requirements & Plan
 
