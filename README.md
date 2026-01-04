@@ -862,5 +862,3 @@ Treat this report as a "living document" and update each module as it is impleme
 - **v1.0** (2026-01-04): Completed the Enemy AI system section and planned subsequent modules
 
 </details>
-[README_GitHub_Collapsible.md](https://github.com/user-attachments/files/24421347/README_GitHub_Collapsible.md)
-ents/files/24421346/README_GitHub_Collapsible.md)
